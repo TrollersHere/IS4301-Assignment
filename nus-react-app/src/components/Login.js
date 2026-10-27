@@ -4,7 +4,7 @@ import {
   signupWithEmail,
   loginWithGoogle,
   getFriendlyErrorMessage,
-  isRealFirebaseConfigured,
+  // isRealFirebaseConfigured,
 } from '../firebase';
 
 function Login({ onLoginSuccess, redirectMessage }) {
@@ -106,43 +106,43 @@ function Login({ onLoginSuccess, redirectMessage }) {
   };
 
   // Quick demonstration handlers for required test scenarios
-  const handleDemoGoogle = async () => {
-    await handleGoogleSignIn();
-  };
+  // const handleDemoGoogle = async () => {
+  //   await handleGoogleSignIn();
+  // };
 
-  const handleDemoWrongPassword = async () => {
-    clearNotification();
-    setEmail('student@u.nus.edu');
-    setPassword('wrongPassword999');
-    setLoading(true);
-    try {
-      await loginWithEmail('student@u.nus.edu', 'wrongPassword999');
-    } catch (error) {
-      setNotification({
-        type: 'danger',
-        message: getFriendlyErrorMessage(error),
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const handleDemoWrongPassword = async () => {
+  //   clearNotification();
+  //   setEmail('student@u.nus.edu');
+  //   setPassword('wrongPassword999');
+  //   setLoading(true);
+  //   try {
+  //     await loginWithEmail('student@u.nus.edu', 'wrongPassword999');
+  //   } catch (error) {
+  //     setNotification({
+  //       type: 'danger',
+  //       message: getFriendlyErrorMessage(error),
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  const handleDemoNonExistentUser = async () => {
-    clearNotification();
-    setEmail('unknown.student99@u.nus.edu');
-    setPassword('randomPassword123');
-    setLoading(true);
-    try {
-      await loginWithEmail('unknown.student99@u.nus.edu', 'randomPassword123');
-    } catch (error) {
-      setNotification({
-        type: 'danger',
-        message: getFriendlyErrorMessage(error),
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const handleDemoNonExistentUser = async () => {
+  //   clearNotification();
+  //   setEmail('unknown.student99@u.nus.edu');
+  //   setPassword('randomPassword123');
+  //   setLoading(true);
+  //   try {
+  //     await loginWithEmail('unknown.student99@u.nus.edu', 'randomPassword123');
+  //   } catch (error) {
+  //     setNotification({
+  //       type: 'danger',
+  //       message: getFriendlyErrorMessage(error),
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="container my-5">
